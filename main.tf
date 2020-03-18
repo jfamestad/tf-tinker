@@ -11,13 +11,13 @@ provider "aws" {
   region = "us-west-2"
 }
 
-variable "bucket-name" {
+variable "bucket_name" {
   type = string
   default = "super-secret-stuff-no-hackers-allowed"
 }
 
 resource "aws_s3_bucket" "bucket" {
-  bucket = var.bucket-name
+  bucket = var.bucket_name
   
   tags = {
     Name = "Super Secret Stuff"
