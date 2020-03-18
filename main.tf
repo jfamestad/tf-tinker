@@ -1,8 +1,10 @@
 terraform {
-  backend "s3" {
-    bucket = "joshtf"
-    key = "dev/tf-tinker"
-    region = "us-west-2"  # This does not have to be the region we are deploying to, its just our remote state
+  backend "remote" {
+    hostname = app.terraform.io
+    organization = "FamestadDevIV"
+    workspaces {
+      prefix = "dev-"
+    }
   }
 }
 
